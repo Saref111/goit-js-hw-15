@@ -12,7 +12,7 @@ const onFormSubmit = (event) => {
     const formData = new FormData(event.currentTarget);
     formElement.reset();
     formData.forEach((value, name) => {
-        console.log(`${name}: ${value}`);
+        console.log({ name, value });
     });
 };
 
