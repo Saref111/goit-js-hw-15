@@ -10,8 +10,7 @@ const destroyButton = controls.querySelector('[data-destroy]');
 const input = controls.querySelector('input');
 const boxes = document.querySelector('#boxes');
 
-const createBoxes = () => {
-  const amount = input.value;
+const createBoxes = (amount) => {
   const divs  = [];
 
   for (let i = 0; i < amount; i += 1) {
@@ -30,6 +29,14 @@ const destroyBoxes = () => {
   boxes.innerHTML = '';
 };
 
+const onCreateButtonClick = () => {
+  createBoxes(input.value);
+};
 
-createButton.addEventListener('click', createBoxes);
-destroyButton.addEventListener('click', destroyBoxes);
+const onDestroyButtonClick = () => {
+  destroyBoxes();
+};
+
+
+createButton.addEventListener('click', onCreateButtonClick);
+destroyButton.addEventListener('click', onDestroyButtonClick);
